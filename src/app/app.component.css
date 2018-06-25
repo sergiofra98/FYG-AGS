@@ -1,0 +1,25 @@
+@media screen and (max-width: 1024px) {
+    app-navegador, .cuerpo {
+        margin: auto;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    app-navegador, .cuerpo {
+        width: 90%;
+        margin: auto;
+        min-width: 972px;
+    }
+}
+
+app-navegador {
+    margin-top: 24px;
+    max-width: 1318px;
+}
+
+.cuerpo{
+    max-width: 1318px;
+    margin: auto;
+    margin-top: 8px;
+}

@@ -1,0 +1,114 @@
+.alado{
+    width: 230px;
+    background-color: white;
+    float: left;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    overflow: hidden;
+}
+
+.alado h4, .alado h6{
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+
+.alado .form-control{
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+
+.alado form{
+    width: 80%;
+    margin: auto;
+}
+
+.alado .checkbox{
+    margin-bottom: 12px;
+}
+
+.alado .checkbox input{
+    margin-top: 7px;
+    margin-left: -16px;
+}
+
+.cuerpo{
+    width: calc(100% - 242px);
+    background-color: white;    
+    border: 2px solid #ccc;
+    float: right;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tiempo{
+    padding-left: 12px;
+    background-color: #808080;
+    color: white;
+}
+
+.tiempo:hover{
+    background-color: #a6a6a6;
+    cursor: pointer;
+}
+
+.reportes{
+    overflow: hidden;
+}
+
+.agregarBorde{
+    border-top: 2px solid #ccc;
+}
+
+#reporte{
+    float: left;
+    border-top: 2px solid #ccc;
+}
+
+#reporte p{
+    width: calc(100% - 69px);
+    float: left;
+}
+
+#reporte .datos{
+    height: 26px;
+    margin: 8px;
+    float: left;
+    width: 100%;
+}
+
+#reporte .btn-light{
+    margin-top: 6px;
+}
+
+#reporte .botones{
+    overflow: hidden;
+    padding-bottom: 6px; 
+    float: right;
+    width: 100%;    
+}
+
+#reporte .datos span{
+    width: 33.333%;
+    display: block;
+    float: left;
+}
+
+#reporte p{
+    margin: 8px;
+}
+
+#reporte .btn{
+    float: right;
+    margin-right: 16px;
+}
+
+.grupoReportes .fa{
+    transition: 0.2s;
+    font-size: 20px;
+    transform: rotate(-90deg);
+}
+
+.grupoReportes .fa.active{
+    transform: rotate(0deg);
+}

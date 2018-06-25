@@ -1,0 +1,268 @@
+<div class="contenedor">
+  <div class="alado">
+    <h4>Filtros</h4>
+
+    <form class="form-group">
+      <input type="text" class="form-control" placeholder="Nombre">
+      <input type="text" class="form-control" placeholder="Apellido Paterno">
+      <input type="text" class="form-control" placeholder="Apellido Materno">
+
+      <h6>Riesgo</h6>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected hidden>Seleccione...</option>
+        <option value="BAJO">Bajo</option>
+        <option value="MEDIO">Medio</option>
+        <option value="ALTO">Alto</option>
+      </select>
+
+      <h6>Transacción</h6>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected hidden>Seleccione...</option>
+        <option value="Retiro">Retiro</option>
+        <option value="Deposito">Deposito</option>
+        <option value="Pago">Pago</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+
+      <h6>Tiempo</h6>
+      <div class="checkbox">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Hoy</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Ayer</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Antier</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">3 Dias</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Esta Semana</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Este Mes</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+          <label class="form-check-label" for="exampleCheck1">Anterior</label>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="cuerpo">
+    <!–– MISMO DIA ––>
+    <div class="grupoReportes">
+      <div class="tiempo" (click)="this.selectorTiempo.hoy = !this.selectorTiempo.hoy">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.hoy === true}" *ngIf="reportesDatos.hoy.length"></i> Hoy
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.hoy">
+        <div id="reporte" *ngFor="let i of reportesDatos.hoy || !reportesDatos.hoy.length">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– AYER ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.ayer = !this.selectorTiempo.ayer">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.ayer === true}" *ngIf="reportesDatos.ayer.length"></i> Ayer
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.ayer || !reportesDatos.ayer.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.ayer">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– ANTIER ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.antier = !this.selectorTiempo.antier">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.antier === true}" *ngIf="reportesDatos.antier.length"></i> Antier
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.antier || !reportesDatos.antier.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.antier">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– 3 DIAS ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.tresDias = !this.selectorTiempo.tresDias">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.tresDias === true}" *ngIf="reportesDatos.tresDias.length"></i> Hace 3 días
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.tresDias || !reportesDatos.tresDias.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.tresDias">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– SEMANA ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.semana = !this.selectorTiempo.semana">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.semana === true}" *ngIf="reportesDatos.semana.length"></i> Esta semana
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.semana || !reportesDatos.semana.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.semana">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– MES ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.mes = !this.selectorTiempo.mes">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.mes === true}" *ngIf="reportesDatos.mes.length"></i> Este Mes
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.mes || !reportesDatos.mes.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.mes">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!–– MAS QUE TODO ––>
+    <div class="grupoReportes agregarBorde">
+      <div class="tiempo" (click)="this.selectorTiempo.anterior = !this.selectorTiempo.anterior">
+        <i class="fa fa-caret-down" [ngClass]="{'active':selectorTiempo.anterior === true}" *ngIf="reportesDatos.anterior.length"></i> Anterior
+      </div>
+      <div class="reportes" *ngIf="this.selectorTiempo.anterior || !reportesDatos.anterior.length">
+        <div id="reporte" *ngFor="let i of reportesDatos.anterior">
+          <p>{{i.texto}}</p>
+          <button class="btn btn-light" title="Eliminar reporte de los registros" (click)="eliminarReporte()">&#215;</button>
+          <div class="datos">
+            <span>
+              <b>Transacción:</b>
+              {{i.transaccion}}
+            </span>
+            <span>
+              <b>Tipo de Riesgo:</b>
+              {{i.riesgo}}
+            </span>
+            <span>
+              {{i.fecha}}
+            </span>
+          </div>
+          <div class="botones">
+            <button class="btn btn-danger">Cancelar Operación</button>
+            <button class="btn btn-success">Permitir Operación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

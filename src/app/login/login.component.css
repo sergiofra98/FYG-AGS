@@ -1,0 +1,66 @@
+.fondo{
+    background-color: #1ea8e9;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    min-width: 380px;
+}
+
+.header{
+    height: 104px;
+}
+
+.header .btn{
+    float: right;
+    margin: 12px 32px 32px 0 ;
+}
+
+/*ESTILO CUADRO INICIO SESION*/
+
+#cuadroLogin{
+    margin: auto;
+    width: 420px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h2{
+    text-align: center;
+    color:rgb(91, 192, 222);
+    margin: 24px;
+}
+
+form{
+    display: block;
+}
+
+input{
+    display: block !important;
+    margin: auto;
+    margin-top: 16px;
+    text-align: center;
+    width: 45%;
+}
+
+form .btn{
+    margin-top: 24px;
+    margin-left: 100px;
+    width: 200px;
+}
+
+.form-control{
+    width: 300px;
+}
+
+/*ESTILO FOOTER*/
+
+footer a{
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}

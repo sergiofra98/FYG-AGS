@@ -1,0 +1,27 @@
+<div id="headerPagina">
+  <div class="tab ">
+    <div class="botonesNav">
+      <img src="assets/img/logo_fyg.jpg" alt="Logo FyG">
+      <button class="pageTabs" (click)="selectorPagina = 0" [ngClass]="{'active':selectorPagina == 0}" routerLink="/Home">Home</button>
+      <button class="pageTabs" (click)="selectorPagina = 1" [ngClass]="{'active':selectorPagina == 1}" routerLink="/Reportes">Reportes</button>
+      <button class="pageTabs" (click)="selectorPagina = 2" [ngClass]="{'active':selectorPagina == 2}" routerLink="/Usuarios">Usuarios</button>
+      <button class="pageTabs" (click)="selectorPagina = 3" [ngClass]="{'active':selectorPagina == 3}" routerLink="/OperacionesDetenidas">Operaciones Detenidas</button>
+    </div>
+
+    <div class="botonesFA">
+      <button id="botonConfig" title="Opciones" (click)="selectorPagina = 4" [ngClass]="{'active':selectorPagina == 4} " routerLink="/Ajustes">
+        <i class="fa fa-cog"></i>
+      </button>
+      <button id="botonBell" title="Notificaciones" (click)="mostrarPrevisNotificaciones = !mostrarPrevisNotificaciones">
+        <span id="contadorNotificaciones" *ngIf="contadorNotificaciones">
+          {{this.contadorNotificaciones}}
+        </span>
+        <i class="fa fa-bell"></i>
+      </button>
+      <button id="botonSalir" title="Cerrar Sesión">
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+    <app-notificaciones-previs *ngIf="mostrarPrevisNotificaciones" ></app-notificaciones-previs>
+  </div>
+</div>

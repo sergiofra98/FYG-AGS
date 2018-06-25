@@ -1,0 +1,56 @@
+.notificaciones{
+    color: black;
+}
+
+.contenedor{
+    width: 450px;
+    border: 2px solid #555;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 3;
+    margin-left: -230px;
+}
+
+.contenedor::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    margin-left: 140px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+#verTodo .btn{
+    margin: -9px;
+}
+
+.texto{
+    width: 68%;
+    float: left;
+    display: block;
+    margin: 0 12px;
+}
+
+#notificacion{
+    border-bottom: 1px solid #555;
+}
+
+#notificacion button{
+    width: 24%;
+    margin-top: 12px;
+    float: left;
+    display: block;
+}
+
+.fecha{
+    text-align: left;
+    font-size: 12px;
+    margin-left: 8px;
+    width: 68%;
+    display: block;
+}
