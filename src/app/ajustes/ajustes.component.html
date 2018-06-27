@@ -1,14 +1,64 @@
 <div class="cuerpo">
   <div class="side">
-    <button class="pageTabs">Manejo de archivos</button>
-    <button class="pageTabs">Reglas</button>
-    <button class="pageTabs">Cuenta</button>
+    <button class="pageTabs" (click)="selectorAjustes = 0" [ngClass]="{'active': selectorAjustes === 0}">Manejo de archivos</button>
+    <button class="pageTabs" (click)="selectorAjustes = 1" [ngClass]="{'active': selectorAjustes === 1}">Reglas</button>
+    <button class="pageTabs" (click)="selectorAjustes = 2" [ngClass]="{'active': selectorAjustes === 2}">Cuenta</button>
   </div>
   <div class="principal">
-    <div id="manejoArchivos">
+    <div id="manejoArchivos" *ngIf="selectorAjustes === 0">
       <form class="form-group">
         <div class="selectArchivo">
-          <span>Archivos cliente</span>
+          <span>Archivos cliente:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <div class="selectArchivo">
+          <span>Archivos de liquidación PROSA:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <div class="selectArchivo">
+          <span>Archivos crédito:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <div class="selectArchivo">
+          <span>Archivos ATM:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <div class="selectArchivo">
+          <span>Archivos productos por cliente:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <div class="selectArchivo">
+          <span>Archivos Fondos de inversión:  </span><i class="fa fa-check"></i>
+          <br>
+          <div class="custom-file">
+            <input class="custom-file-input" type="file" id="inputCliente">
+            <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
+          </div>
+        </div>
+        <br>
+        <div class="selectArchivo">
+          <span>Archivos transaccional:  </span><i class="fa fa-check"></i>
+          <br>
           <div class="custom-file">
             <input class="custom-file-input" type="file" id="inputCliente">
             <label for="inputCliente" class="custom-file-label">Seleccionar Archivo</label>
@@ -17,13 +67,15 @@
 
         <div class="footer">
           <button class="btn btn-success">Ejecutar ETL</button>
+          <button class="btn btn-primary">Subir archivos</button>
+          
         </div>
       </form>
     </div>
-    <div id="reglas">
+    <div id="reglas" *ngIf="selectorAjustes === 1">
 
     </div>
-    <div id="cuenta">
+    <div id="cuenta" *ngIf="selectorAjustes === 2">
 
     </div>
   </div>

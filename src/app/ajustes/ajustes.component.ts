@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjustesComponent implements OnInit {
 
-  constructor() { }
+  public selectorAjustes: number;
+
+  constructor() { 
+    this.selectorAjustes = 0;
+  }
 
   ngOnInit() {
   }
