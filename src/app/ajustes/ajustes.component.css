@@ -1,0 +1,38 @@
+.cuerpo{
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.side{
+    width: 30%;
+    float: left;
+}
+
+.side button{
+    width: 100%;
+    float: left;
+    height: 52px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.side button:hover{
+    background-color: #ddd;
+}
+.principal{
+    width: 70%;
+    float: left;
+}
+
+.footer{
+    width: 100%;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.btn-success{
+    float: right;
+}

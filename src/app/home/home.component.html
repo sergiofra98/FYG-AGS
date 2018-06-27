@@ -2,7 +2,17 @@
     <div class="splash">
         Bienvenido usuario {{usuario}}
     </div>
-    <div *ngIf="chart">
-        <canvas id="canvas">{{ chart }}</canvas>
+    <div class="graficas">
+        <div class="graficasDonas">
+            <canvas id="graficaTransExitosas" height="300"></canvas>
+        </div>
+        <div class="graficasDonas">
+            <canvas id="graficaTransRiesgo" height="300"></canvas>
+        </div>
+        <div class="graficaLineal">
+            <canvas id="graficaTransHistoria" height="90"></canvas>
+        </div>
+
     </div>
+
 </div>

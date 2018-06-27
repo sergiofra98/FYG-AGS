@@ -1,47 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { UsuariosComponent } from '../usuarios/usuarios.component';
-import { HttpClientModule } from '@angular/common/http';
+import { Component, AfterViewInit  } from '@angular/core';
 import { TablasHomeService } from '../tablas-home.service';
 import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [TablasHomeService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
 
   public selectorPagina: number;
   public mostrarPrevisNotificaciones: boolean;
   public contadorNotificaciones: number;
-  chart = [];
 
-  data = {
-    datasets: [{
-      data: [10, 20, 30]
-    }],
+  canvas: any;
+  ctx: any;
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      'Red',
-      'Yellow',
-      'Blue'
-    ]
-  };
+  ngAfterViewInit() {
+    this.canvas = document.getElementById('graficaTransExitosas');
 
-  constructor() {
+    const canvasDetenidas = new Chart(this.canvas.getContext( '2d'), this._consultaTablas.graficaDetenidas);
+
+    this.canvas = document.getElementById('graficaTransRiesgo');
+
+    const canvasExitosas = new Chart(this.canvas.getContext( '2d'), this._consultaTablas.graficaExitosas);
+
+    this.canvas = document.getElementById('graficaTransHistoria');
+
+    const canvasGrafica = new Chart(this.canvas.getContext( '2d'), this._consultaTablas.historialTransacciones);
+  }
+
+  constructor( private _consultaTablas: TablasHomeService) {
     this.contadorNotificaciones = 0;
     this.selectorPagina = 1;
     this.mostrarPrevisNotificaciones = false;
-
-    this.chart = new Chart('canvas', {
-      type: 'pie',
-      data: this.data,
-      options: ''
-    });
-  }
-
-  ngOnInit() {
   }
 
   cerrarSesion() {

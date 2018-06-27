@@ -1,0 +1,47 @@
+.cuerpo{
+    background: white;
+    overflow: auto;
+}
+
+.splash{
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 42px;
+}
+
+.graficas{
+    width: 100%;
+    float: left;
+}
+
+canvas{
+    float: left;
+}
+
+#graficaTransExitosas, #graficaTransRiesgo{
+    
+    position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+    .graficasDonas {
+        padding: 22px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .graficasDonas {
+        padding: 42px;
+    }
+}
+
+.graficasDonas{
+    display: block;
+    float: left;
+    width: 50%;
+    
+}
+
+.graficaLineal{
+    padding: 22px;
+}
