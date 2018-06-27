@@ -1,27 +1,31 @@
-# FYGAGS
+# ORIGMETODOLOGIA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Este proyecto fue hecho utilizando angular 6.0.3 y typescript, este es un framework de desarrollo de páginas web, más info en `https://angular.io/`
 
-## Development server
+# Instalación de Angular CLI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para instalar angular CLI y poder editar el proyecto
 
-## Code scaffolding
+1) Descargar e instalar NodeJS versión mínima de 10.1
+2) Una vez instalado NodeJS, se debe instalar angular utilizando el comando `npm install -g @angular/cli`. Este proceso tardará unos minutos
+3) Cuando termine de instalar Angular, se debe descargar los prerrequisitos del proyecto. para esto, se debe abrir una ventana de consola en la 
+   ubicación del proyecto, en este caso `.\FYG-AGS\` y correr el comando `npm install`. Este comando tardará unos minutos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pruebas
 
-## Build
+Ya instalado todo lo necesario, se debe correr el compilador de tiempo real utilizando el comando `ng serve` y navegando a `http://localhost:4200/`
+en el explorador. Este se actualizará automáticamente al detectar cambios en los archivos fuente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Compilación
 
-## Running unit tests
+El proyecto proveído es simplemente los archivos fuente y debe ser compilado para distribución y liberación.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+El comando para compilar el proyecto de forma correcta es `ng build --prod --base-href /FYG-AGS/ --build-optimizer`
 
-## Running end-to-end tests
+Los archivos se guardarán en la carpeta `dist` dentro de la raíz del proyecto
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+¡¡¡ATENCIÓN!!! 
+    Estos archivos compilados deberan estar en un servidor virtual, sea `tomcat` o `XAMPP`´
+    No servirán si se abren directamente en un explorador
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Notas Extras
