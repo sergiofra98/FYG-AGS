@@ -10,7 +10,7 @@ export class AjustesComponent implements OnInit {
   public selectorAjustes: number;
 
   constructor() { 
-    this.selectorAjustes = 0;
+    this.selectorAjustes = 1;
   }
 
   ngOnInit() {

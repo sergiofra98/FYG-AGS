@@ -61,3 +61,39 @@
 .selectArchivo i{
     color: green;
 }
+
+.agregarReglas{
+    overflow: hidden;
+    margin:12px;
+}
+
+.agregarReglas div{
+    float: left;
+    width: 100%;
+}
+
+.agregarReglas input, .agregarReglas select{
+    float: left;
+}
+
+.agregarReglas .btn{
+    float: right;
+    margin-right: 0;
+    margin-top: 12px;
+}
+
+.tablaReglas{
+    margin-top: 12px;
+}
+
+table{
+    display: block;
+}
+
+thead button{
+    margin:0;
+}
+
+td .btn-link{
+    color:red;
+}

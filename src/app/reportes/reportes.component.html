@@ -2,13 +2,13 @@
   <div class="alado">
     <h4>Filtros</h4>
 
-    <form class="form-group">
-      <input type="text" class="form-control" placeholder="Nombre">
-      <input type="text" class="form-control" placeholder="Apellido Paterno">
-      <input type="text" class="form-control" placeholder="Apellido Materno">
+    <form class="form-group" #formConsulta="ngForm">
+      <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="form.nombre" name="nombre">
+      <input type="text" class="form-control" placeholder="Apellido Paterno"[(ngModel)]="form.apellidoPat" name="apellidoPat">
+      <input type="text" class="form-control" placeholder="Apellido Materno"[(ngModel)]="form.apellidoMat" name="apellidoMat">
 
       <h6>Riesgo</h6>
-      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" [(ngModel)]="form.riesgo" name="riesgo">
         <option selected hidden>Seleccione...</option>
         <option value="BAJO">Bajo</option>
         <option value="MEDIO">Medio</option>
@@ -16,7 +16,7 @@
       </select>
 
       <h6>Transacción</h6>
-      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" [(ngModel)]="form.transaccion" name="transaccion">
         <option selected hidden>Seleccione...</option>
         <option value="Retiro">Retiro</option>
         <option value="Deposito">Deposito</option>
@@ -26,36 +26,13 @@
 
 
       <h6>Tiempo</h6>
-      <div class="checkbox">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Hoy</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Ayer</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Antier</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">3 Dias</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Esta Semana</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Este Mes</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Anterior</label>
-        </div>
+      <div>
+          <p-calendar id="calendario" name="date1" [(ngModel)]="form.date1" [monthNavigator]="true" [yearNavigator]="true" dateFormat="dd/mm/yy"
+            yearRange="2000:2030"></p-calendar>
+            <p-calendar id="calendario" name="date1" [(ngModel)]="form.date2" [monthNavigator]="true" [yearNavigator]="true" dateFormat="dd/mm/yy"
+            yearRange="2000:2030"></p-calendar>
       </div>
+      <button (click)="formConsulta.reset()">Consultar</button>
     </form>
 
   </div>

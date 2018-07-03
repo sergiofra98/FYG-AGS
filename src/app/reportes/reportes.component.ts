@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CalendarModule} from 'primeng/calendar';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SelectorListContext } from '@angular/compiler';
 
@@ -10,12 +11,11 @@ import { SelectorListContext } from '@angular/compiler';
 export class ReportesComponent implements OnInit {
 
   public selectorTiempo: any;
-
+  public form: form;
   public reportesDatos: any;
 
   constructor() {
     this.selectorTiempo = { hoy: true, ayer: false, antier: false, tresDias: false, semana: false, mes: false, anterior: false };
-
     this.reportesDatos = {
       hoy: [{
         texto: 'Se detectó un retiro de la cuenta que termina ' +
@@ -79,6 +79,7 @@ export class ReportesComponent implements OnInit {
         transaccion: 'Retiro', riesgo: 'Alto', fecha: '13:32:32 UTC 17/6/2018'
       }]
     };
+    this.form = new form('','','','','');
   }
 
   ngOnInit() {
@@ -89,4 +90,33 @@ export class ReportesComponent implements OnInit {
     console.log(3);
   }
 
+}
+
+export class form{
+  public fecha1: Fecha;
+  public fecha2: Fecha;
+    constructor(
+        public nombre: string,
+        public apellidoPat: string,
+        public apellidoMat: string,
+        public riesgo: string,
+        public transaccion: string,) {
+            this.fecha1 = new Fecha();
+            this.fecha2 = new Fecha();
+        }
+}
+
+export class Fecha {
+
+  date: Date;
+
+  ngOnInit() {
+      const today = new Date();
+      const month = today.getMonth();
+      const year = today.getFullYear();
+      const prevMonth = (month === 0) ? 11 : month - 1;
+      const prevYear = (prevMonth === 11) ? year - 1 : year;
+      const nextMonth = (month === 11) ? 0 : month + 1;
+      const nextYear = (nextMonth === 0) ? year + 1 : year;
+  }
 }

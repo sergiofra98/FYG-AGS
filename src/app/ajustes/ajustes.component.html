@@ -73,7 +73,47 @@
       </form>
     </div>
     <div id="reglas" *ngIf="selectorAjustes === 1">
-
+      <h3>Agregar reglas de detección de fraudes</h3>
+      <div class="agregarReglas">
+        <form class="form-group">
+          
+            <div><h5>Nombre:</h5><input class="form-control" type="text"></div>
+            <div>
+              <h5>Condición:</h5>
+              <input class="form-control"  type="text" style="width: calc(50% - 28px);">
+              <select class="form-control"  name="condicion" id="" style="width: 56px;">
+                <option value="MENOR">&lt;</option>
+                <option value="MENORIGUAL">&lt;=</option>
+                <option value="IGUAL">=</option>
+                <option value="MAYORIGUAL">&gt;</option>
+                <option value="MAYOR">=&gt;</option>
+              </select>
+              <input class="form-control" type="text" style="width: calc(50% - 28px);">
+            </div>
+            
+            <button class="btn btn-primary">Agregar regla</button>
+        </form>
+      </div>
+      <div class="tablaReglas">
+        <table class="table ">
+          <thead class="thead-dark thead-boreded">
+            <tr>
+              <th scope="col" style="width:30%">Nombre</th>
+              <th scope="col" style="width:50%">Condición</th>
+              <th scope="col" style="width:10%">Fecha</th>
+              <th scope="col" style="width:10%"><button class="btn btn-link">Editar</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Retiro alto</td>
+              <td>Retiro mayor a $30,000</td>
+              <td>23/6/2015</td>
+              <td> <button class="btn btn-link"><i class="fa fa-times"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div id="cuenta" *ngIf="selectorAjustes === 2">
 
