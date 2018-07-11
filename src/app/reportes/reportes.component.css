@@ -51,22 +51,12 @@
     color: white;
 }
 
-.tiempo:hover{
-    background-color: #a6a6a6;
-    cursor: pointer;
+tr.previs:hover{
+    background-color: #f3f3f3;
 }
 
-.reportes{
-    overflow: hidden;
-}
-
-.agregarBorde{
-    border-top: 2px solid #ccc;
-}
-
-#reporte{
-    float: left;
-    border-top: 2px solid #ccc;
+tr.previs.active{
+    background-color: #ececec;
 }
 
 #reporte p{
@@ -107,14 +97,12 @@
     margin-right: 16px;
 }
 
-.grupoReportes .fa{
-    transition: 0.2s;
-    font-size: 20px;
-    transform: rotate(-90deg);
+.grupoReportes table{
+    margin-bottom: 0;
 }
 
-.grupoReportes .fa.active{
-    transform: rotate(0deg);
+.grupoReportes button .fa{
+    font-size: 28px;
 }
 
 p-calendar{
